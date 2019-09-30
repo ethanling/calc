@@ -1,13 +1,161 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --main-bg-color: #ffdea6;
+    --calc-bg: #271F1F; 
+    --dark-text: #160504;
+    --light-text: #FBF9F8;
+    --dark-grey: #423C3C;
+    --normal-button: #5F5959;
+    --operator-button: #ff9130;
+    --modifier-button: #9D9797;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+    /* box-sizing: border-box; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+a {
+    color: var(--calc-bg);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.App {
+    margin: 0;
+    font-family: "Helvetica", "Arial", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: var(--main-bg-color);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sidebar-main {
+    flex: 1;
+    min-width: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    opacity: 0;
+}
+
+.sidebar-container {
+    padding: 20px;
+    width: 250px;
+    color: var(--dark-text);
+}
+
+.sidebar-container h1 {
+    font-size: 100px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.sidebar-container p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.sidebar-spacer {
+    flex: 1;
+}
+
+.calc-wrapper {
+    flex: 1;
+    z-index: 1;
+    width: 360px;
+    background-color: var(--calc-bg);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.calc-display {
+    height: 172px;
+    border-radius: 14px;
+    padding: 14px;
+    background-color: var(--dark-grey);
+    color: var(--light-text);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    font-size: 40px;
+}
+
+.display-expression {
+    font-size: 20px;
+    position: absolute;
+    top: 44px;;
+    left: 44px;
+}
+
+.calc-buttons {
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-auto-rows: minmax(90px, auto);
+    align-items: center;
+    justify-items: center;
+}
+
+.button {
+    padding: 0;
+    background-color: var(--normal-button);
+    height: 75px;
+    width: 75px;
+    line-height: 20px;
+    border-radius: 50%;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    font-size: 30px;
+    font-weight: bold;
+    transition: all .2s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-zero {
+    width: 170px;
+    border-radius: 120px;
+    grid-column: span 2;
+    justify-content: left;
+    padding-left: 30px;
+}
+
+.button-modifier {
+    background-color: var(--modifier-button);
+}
+
+.button-operator {
+    background-color: var(--operator-button);
+}
+
+.button:hover {
+    opacity: .75;
+}
+
+.button:active {
+    transform: scale(.9);
+}
+
+.button:focus {
+    outline: none;
 }
