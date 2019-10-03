@@ -18,6 +18,20 @@ const Display = (props) => {
         );
         return formattedSymbol;
     }
+    // Adds line breaks to numbers too long to fit onto calc display
+    const addLineBreaks = num => {
+        let formattedNum = "";
+        const arr = num.match(/.{1,12}/g);
+
+        if (arr) {
+            for (let i = 0; i < arr.length; i++) {
+                formattedNum += arr[i] + "\n";
+                console.log(arr);
+            }
+        }
+        return formattedNum;
+    };
+
     return (
         <div 
             className="calc-display"
@@ -31,7 +45,7 @@ const Display = (props) => {
                     : ('')}
             </span>
             <span className="display-number">
-                {!number.length && !storedNumber ? "0" : number || storedNumber}
+                {!number.length && !storedNumber ? "0" : addLineBreaks(number) || addLineBreaks(storedNumber)}
             </span>
             {/* {props.firstLoad ? 'True' : 'False'} */}
         </div>
