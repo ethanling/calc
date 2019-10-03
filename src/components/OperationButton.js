@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { NumberContext } from '../context/NumberProvider';
+import { ThemeContext } from "../context/ThemeProvider";
 
 const symbolCodes = [
     { operator: "/", code: "247"},
@@ -9,11 +10,15 @@ const symbolCodes = [
 ]
 
 const OperationButton = ({ buttonValue }) => {
+    
     const { handleSetCalcFunction } = useContext(NumberContext)
+    const { theme } = useContext(ThemeContext);
+
     return (
         <button 
             type="button" 
             className="button button-operator"
+            style={{ backgroundColor: theme.operationButton.backgroundColor }}
             onClick={() => handleSetCalcFunction(buttonValue)}
         >
             {   // Display operator symbol

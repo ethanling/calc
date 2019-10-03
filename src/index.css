@@ -16,7 +16,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--main-bg-color);
 }
 
 a {
@@ -39,6 +38,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: all .3s ease;
 }
 
 .sidebar-main {
@@ -49,12 +49,12 @@ a:hover {
     justify-content: flex-end;
     align-items: flex-start;
     opacity: 0;
+    color: var(--dark-text);
 }
 
 .sidebar-container {
     padding: 20px;
     width: 250px;
-    color: var(--dark-text);
 }
 
 .sidebar-container h1 {
@@ -79,6 +79,7 @@ a:hover {
     background-color: var(--calc-bg);
     border-radius: 30px;
     padding: 30px;
+    transition: all .3s ease;
 }
 
 .calc-display {
@@ -118,7 +119,6 @@ a:hover {
     background-color: var(--normal-button);
     height: 75px;
     width: 75px;
-    line-height: 20px;
     border-radius: 50%;
     border: 0;
     display: flex;
@@ -146,6 +146,8 @@ a:hover {
 
 .button-operator {
     background-color: var(--operator-button);
+    margin: 0 auto;
+    font-size: 40px;
 }
 
 .button:hover {
@@ -158,4 +160,52 @@ a:hover {
 
 .button:focus {
     outline: none;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 14px 20px 14px 20px;
+    margin-left: -20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    transition: all .3s ease;
+}
+
+.controls:hover {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.controls h3 {
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+    font-size: 22px;
+}
+
+.control-theme {
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.control-theme-color-one {
+    background-color: #ff9130;
+    height: 20px;
+    width: 40px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    transition: all .3s ease;
+}
+
+.control-theme-color-two {
+    background-color: var(--calc-bg);
+    height: 20px;
+    width: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    transition: all .3s ease;
 }

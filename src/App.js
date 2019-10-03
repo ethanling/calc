@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Calc from "./components/Calc";
 import Sidebar from "./components/Sidebar";
-import NumberProvider from './context/NumberProvider';
+import NumberProvider from "./context/NumberProvider";
+import { ThemeContext } from "./context/ThemeProvider";
 
-function App() {
+const App = () => {
+    const { theme } = useContext(ThemeContext);
     return (
-        <div className="App">
+        <div
+            className="App"
+            style={{ 
+                backgroundColor: theme.app.backgroundColor,
+            }}
+        >
             <Sidebar />
             <NumberProvider>
                 <Calc />
@@ -13,6 +20,6 @@ function App() {
             <div className="sidebar-spacer"></div>
         </div>
     );
-}
+};
 
 export default App;
