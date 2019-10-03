@@ -26,13 +26,13 @@ const Sidebar = () => {
                     This calculator is largely based on the app found in iOS. I
                     built it using React in order to better understand React
                     Hooks. State is managed with the useContext API. Let me know
-                    if you have questions, or check out my other projects{" "}
+                    if you have questions, and feel free to check out my other projects{" "}
                     <a
                         style={{ color: theme.app.color }}
                         href="http://ethanling.com/projects"
                     >
                         here
-                    </a>
+                    </a>.
                 </p>
                 <p>
                     Made in 2019 by{" "}
