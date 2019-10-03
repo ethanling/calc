@@ -1,13 +1,7 @@
 import React, { useContext } from "react";
 import { NumberContext } from '../context/NumberProvider';
 import { ThemeContext } from "../context/ThemeProvider";
-
-const symbolCodes = [
-    { operator: "/", code: "247"},
-    { operator: "*", code: "215"},
-    { operator: "-", code: "8722"},
-    { operator: "+", code: "43"}
-]
+import { symbols } from "../lib/Symbols";
 
 const OperationButton = ({ buttonValue }) => {
     
@@ -23,7 +17,7 @@ const OperationButton = ({ buttonValue }) => {
         >
             {   // Display operator symbol
                 String.fromCharCode(
-                    symbolCodes.filter(code => code.operator === buttonValue)
+                    symbols.filter(code => code.operator === buttonValue)
                     .map(item => item.code)
                 )
             }

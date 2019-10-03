@@ -17,7 +17,6 @@ const App = () => {
             <NumberProvider>
                 <Calc />
             </NumberProvider>
-            <div className="sidebar-spacer"></div>
         </div>
     );
 };

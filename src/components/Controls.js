@@ -7,7 +7,7 @@ const Controls = () => {
     return (
         <button
                 type="button"
-                class="controls"
+                className="controls"
                 onClick={toggle}
             >
             <div className="control-theme">
