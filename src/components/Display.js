@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { symbols } from '../lib/Symbols';
-
 // Theme
 import { ThemeContext } from '../context/ThemeProvider'
-
 // State
 import { NumberContext } from '../context/NumberProvider';
+// Lib functions
+import { symbols } from '../lib/Symbols';
 
 const Display = (props) => {
     const { theme } = useContext(ThemeContext);
@@ -18,6 +17,7 @@ const Display = (props) => {
         );
         return formattedSymbol;
     }
+
     // Adds line breaks to numbers too long to fit onto calc display
     const addLineBreaks = num => {
         let formattedNum = "";
@@ -26,7 +26,6 @@ const Display = (props) => {
         if (arr) {
             for (let i = 0; i < arr.length; i++) {
                 formattedNum += arr[i] + "\n";
-                console.log(arr);
             }
         }
         return formattedNum;

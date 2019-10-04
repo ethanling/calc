@@ -58,6 +58,29 @@ const NumberProvider = props => {
         }
     }
 
+    const handleKeyInput = key => {
+        // Numbers
+        if (!isNaN(parseInt(key))) {
+            handleSetDisplayValue(key);
+        }
+        // Operators
+        if (key === '*' || key === '/' || key === '+' || key === '-') {
+            handleSetCalcFunction(key);
+        }
+        // Backspace
+        if (key === 'Backspace') {
+            handleBackButton();
+        }
+        // Clear
+        if (key === 'c') {
+            handleClearValue();
+        }
+        // Equals
+        if (key === '=' || key === 'Enter') {
+            handleMath();
+        }
+    }
+
     const handleMath = () => {
         // Cuts off sum at 9 integars
         const limitSumIntegars = sum => {
@@ -94,6 +117,7 @@ const NumberProvider = props => {
                 handleClearValue,
                 handleSetCalcFunction,
                 handleToggleNegative,
+                handleKeyInput,
                 handleMath,
                 number,
                 storedNumber,

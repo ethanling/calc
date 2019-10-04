@@ -60,7 +60,7 @@ a:hover {
 }
 
 .sidebar-container {
-    padding: 20px;
+    padding: 40px;
     min-width: 250px;
     max-width: 320px;
 }
@@ -108,7 +108,7 @@ a:hover {
 
 .display-number {
     text-align: right;
-    overflow-x: scroll;
+    overflow: hidden;
 }
 
 .calc-buttons {

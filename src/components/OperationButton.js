@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NumberContext } from '../context/NumberProvider';
 import { ThemeContext } from "../context/ThemeProvider";
-import { symbols } from "../lib/Symbols";
+import { symbols } from "../lib/Symbols"
 
 const OperationButton = ({ buttonValue }) => {
     
