@@ -32,7 +32,6 @@ const NumberProvider = props => {
     }
 
     const handleSetCalcFunction = type => {
-        console.log("Function")
         if (number) {
             setFunctionType(type);
             handleSetStoredValue();
@@ -60,7 +59,7 @@ const NumberProvider = props => {
 
     const handleKeyInput = key => {
         // Numbers
-        if (!isNaN(parseInt(key))) {
+        if (!isNaN(parseInt(key)) || key === ".") {
             handleSetDisplayValue(key);
         }
         // Operators
@@ -69,6 +68,7 @@ const NumberProvider = props => {
         }
         // Backspace
         if (key === 'Backspace') {
+            console.log(key);
             handleBackButton();
         }
         // Clear

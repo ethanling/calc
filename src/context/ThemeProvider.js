@@ -20,8 +20,11 @@ const ThemeProvider = ({ children }) => {
     }, [light])
 
     // Toggles between themes
-    const toggle = () => {
-        const isLight = !light;
+    const toggle = (mode) => {
+        console.log(mode);
+        let isLight; 
+        (mode === 'mint') ? (isLight = true) : (isLight = false);
+        // const isLight = !light;
         localStorage.setItem('light', JSON.stringify(isLight));
         setLight(isLight);
     }

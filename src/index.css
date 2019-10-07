@@ -60,18 +60,20 @@ a:hover {
 }
 
 .sidebar-container {
-    padding: 40px;
+    padding: 20px;
     min-width: 250px;
     max-width: 320px;
 }
 
 .sidebar-container h1 {
+    padding-left: 15px;
     font-size: 100px;
     font-weight: 900;
     margin: 0;
 }
 
 .sidebar-container p {
+    padding-left: 20px;
     font-size: 18px;
     line-height: 30px;
 }
@@ -169,13 +171,17 @@ a:hover {
     outline: none;
 }
 
+.theme-button-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .controls {
     display: flex;
     align-items: center;
     flex-direction: row;
     cursor: pointer;
     padding: 14px 20px 14px 20px;
-    margin-left: -20px;
     background: transparent;
     border: none;
     outline: none;
@@ -219,6 +225,24 @@ a:hover {
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
     transition: all .3s ease;
+}
+
+
+
+.info-button {
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 520px;
+    left: 40px;
 }
 
 /* @media (max-width: 768px) {
