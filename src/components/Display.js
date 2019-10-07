@@ -21,7 +21,7 @@ const Display = (props) => {
     // Adds line breaks to numbers too long to fit onto calc display
     const addLineBreaks = num => {
         let formattedNum = "";
-        const arr = num.match(/.{1,12}/g);
+        const arr = num.match(/.{1,11}/g);
 
         if (arr) {
             for (let i = 0; i < arr.length; i++) {
