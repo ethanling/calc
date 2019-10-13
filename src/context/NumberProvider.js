@@ -82,24 +82,19 @@ const NumberProvider = props => {
     }
 
     const handleMath = () => {
-        // Cuts off sum at 9 integars
-        const limitSumIntegars = sum => {
-            return sum.length > 9 ? sum.slice(0, 8) : sum;
-        }
-
         if (number && storedNumber) {
             switch(functionType) {
                 case '+':
-                    setStoredNumber(`${limitSumIntegars(`${parseFloat(storedNumber) + parseFloat(number)}`)}`)
+                    setStoredNumber(`${parseFloat(storedNumber) + parseFloat(number)}`)
                     break;
                 case '-':
-                    setStoredNumber(`${limitSumIntegars(`${parseFloat(storedNumber) - parseFloat(number)}`)}`)
+                    setStoredNumber(`${parseFloat(storedNumber) - parseFloat(number)}`)
                     break;
                 case '/':
-                    setStoredNumber(`${limitSumIntegars(`${parseFloat(storedNumber) / parseFloat(number)}`)}`)
+                    setStoredNumber(`${parseFloat(storedNumber) / parseFloat(number)}`)
                     break;
                 case '*':
-                    setStoredNumber(`${limitSumIntegars(`${parseFloat(storedNumber) * parseFloat(number)}`)}`)
+                    setStoredNumber(`${parseFloat(storedNumber) * parseFloat(number)}`)
                     break;
                 default:
                     break;
